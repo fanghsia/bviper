@@ -1,0 +1,28 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+typealias {{ module_info.name }}PresenterView = {{ module_info.name }}ViewOutput
+typealias {{ module_info.name }}PresenterInteractor = {{ module_info.name }}InteractorOutput
+
+class {{ module_info.name }}Presenter
+{
+  weak var view: {{ module_info.name }}ViewInput!
+  var interactor: {{ module_info.name }}InteractorInput!
+  var router: {{ module_info.name }}RouterInput!
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput{
+
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterView{
+
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterInteractor {
+}
