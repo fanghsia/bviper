@@ -9,8 +9,6 @@
 import UIKit
 
 public class {{ module_info.name }}ModuleBuilder {
-  weak var transitionHandler : UIViewController!
-
   public static func setupModule() -> UIViewController{
     let viewController = {{ module_info.name }}ViewController()
     configure(viewController: viewController)
@@ -20,6 +18,7 @@ public class {{ module_info.name }}ModuleBuilder {
 
   private static func configure(viewController: {{ module_info.name }}ViewController) {
     let router = {{ module_info.name }}Router()
+    router.transitionHandler = viewController
 
     let presenter = {{ module_info.name }}Presenter()
     presenter.view = viewController
