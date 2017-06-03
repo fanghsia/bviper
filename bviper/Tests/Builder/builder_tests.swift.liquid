@@ -25,7 +25,7 @@ class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
       // given
 
       // when
-      let viewController = BootModuleBuilder.setupModule() as! BootViewController
+      let viewController = {{ module_info.name }}ModuleBuilder.setupModule() as! {{ module_info.name }}ViewController
 
       //then
       XCTAssertNotNil(viewController.output, "BootViewController is nil after builder")
