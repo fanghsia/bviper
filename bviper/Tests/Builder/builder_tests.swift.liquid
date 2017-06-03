@@ -28,18 +28,18 @@ class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
       let viewController = {{ module_info.name }}ModuleBuilder.setupModule() as! {{ module_info.name }}ViewController
 
       //then
-      XCTAssertNotNil(viewController.output, "BootViewController is nil after builder")
-      XCTAssertTrue(viewController.output is BootPresenter, "output is not BootPresenter")
+      XCTAssertNotNil(viewController.output, "{{ module_info.name }}ViewController is nil after builder")
+      XCTAssertTrue(viewController.output is {{ module_info.name }}Presenter, "output is not {{ module_info.name }}Presenter")
 
-      let presenter: BootPresenter = viewController.output as! BootPresenter
-      XCTAssertNotNil(presenter.view, "view in BootPresenter is nil after builder")
-      XCTAssertNotNil(presenter.router, "router in BootPresenter is nil after builder")
-      XCTAssertTrue(presenter.router is BootRouter, "router is not BootRouter")
+      let presenter: {{ module_info.name }}Presenter = viewController.output as! {{ module_info.name }}Presenter
+      XCTAssertNotNil(presenter.view, "view in {{ module_info.name }}Presenter is nil after builder")
+      XCTAssertNotNil(presenter.router, "router in {{ module_info.name }}Presenter is nil after builder")
+      XCTAssertTrue(presenter.router is {{ module_info.name }}Router, "router is not {{ module_info.name }}Router")
 
-      let interactor: BootInteractor = presenter.interactor as! BootInteractor
-      XCTAssertNotNil(interactor.output, "output in BootInteractor is nil after builder")
+      let interactor: {{ module_info.name }}Interactor = presenter.interactor as! {{ module_info.name }}Interactor
+      XCTAssertNotNil(interactor.output, "output in {{ module_info.name }}Interactor is nil after builder")
 
-      let router = presenter.router as! BootRouter
+      let router = presenter.router as! {{ module_info.name }}Router
       XCTAssertNotNil(router.transitionHandler, "handler of router is nil after builder")
   }
 }
