@@ -24,6 +24,7 @@ code_files:
 # DataManager helper
 - {name: DataManager/Api.swift, path: Code/DataManager/api.swift.liquid}
 - {name: DataManager/Local.swift, path: Code/DataManager/local.swift.liquid}
+- {name: DataManager/Entry.swift, path: Code/DataManager/entry.swift.liquid}
 
 # Router layer
 - {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
