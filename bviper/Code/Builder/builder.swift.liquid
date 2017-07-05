@@ -10,18 +10,24 @@ import UIKit
 
 public class {{ module_info.name }}ModuleBuilder {
   public static func setupModule() -> UIViewController{
-    let viewController = {{ module_info.name }}ViewController()
-    configure(viewController: viewController)
+    let viewController = self.setupModule(handler: nil).viewController
     return viewController
   }
 
-  private static func configure(viewController: {{ module_info.name }}ViewController) {
+  public static func setupModule(handler: {{ module_info.name }}ModuleOutput?) -> (viewController: UIViewController, input: {{ module_info.name }}ModuleInput){
+    let viewController = {{ module_info.name }}ViewController()
+    let input = configure(viewController: viewController, handler: handler)
+    return (viewController, input)
+  }
+
+  private static func configure(viewController: {{ module_info.name }}ViewController, handler: {{ module_info.name }}ModuleOutput?) -> {{ module_info.name }}ModuleInput {
     let router = {{ module_info.name }}Router()
     router.transitionHandler = viewController
 
     let presenter = {{ module_info.name }}Presenter()
     presenter.view = viewController
     presenter.router = router
+    presenter.outer = handler
 
     let interactor = {{ module_info.name }}Interactor()
     interactor.output = presenter
@@ -30,6 +36,8 @@ public class {{ module_info.name }}ModuleBuilder {
 
     presenter.interactor = interactor
     viewController.output = presenter
+
+    return presenter as {{ module_info.name }}ModuleInput
   }
 
 }

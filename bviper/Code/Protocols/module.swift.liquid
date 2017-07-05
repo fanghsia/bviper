@@ -10,7 +10,7 @@
 *  methods for communication OuterSide -> {{ module_info.name }}
 *  define the capabilities of {{ module_info.name }}
 */
-protocol {{ module_info.name }}ModuleInput: class {
+public protocol {{ module_info.name }}ModuleInput: class {
 
 }
 
@@ -18,7 +18,7 @@ protocol {{ module_info.name }}ModuleInput: class {
 *  methods for communication {{ module_info.name }} -> OuterSide
 *  tell the caller what is changed
 */
-protocol {{ module_info.name }}ModuleOutput: class {
+public protocol {{ module_info.name }}ModuleOutput: class {
 
 }
 
