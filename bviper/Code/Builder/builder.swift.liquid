@@ -36,6 +36,7 @@ public class {{ module_info.name }}ModuleBuilder {
 
     presenter.interactor = interactor
     viewController.output = presenter
+    viewController.moduleInput = presenter as? {{ module_info.name }}ModuleInput
 
     return presenter as {{ module_info.name }}ModuleInput
   }
