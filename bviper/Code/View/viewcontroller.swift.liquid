@@ -20,3 +20,8 @@ class {{ module_info.name }}ViewController: UIViewController{
 
 extension {{ module_info.name }}ViewController: {{module_info.name}}ViewInput {
 }
+
+// 简化生命周期控制，将模块输入接口配置在View上
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ModuleInput {
+}
+

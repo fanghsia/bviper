@@ -38,7 +38,7 @@ public class {{ module_info.name }}ModuleBuilder {
     viewController.output = presenter
     viewController.moduleInput = presenter as? {{ module_info.name }}ModuleInput
 
-    return presenter as {{ module_info.name }}ModuleInput
+    return viewController as! {{ module_info.name }}ModuleInput
   }
 
 }
