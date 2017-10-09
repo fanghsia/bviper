@@ -31,14 +31,11 @@ public class {{ module_info.name }}ModuleBuilder {
 
     let interactor = {{ module_info.name }}Interactor()
     interactor.output = presenter
-    interactor.api = {{ module_info.name }}ApiDataManager()
-    interactor.local = {{ module_info.name }}LocalDataManager()
 
     presenter.interactor = interactor
     viewController.output = presenter
-    viewController.moduleInput = presenter as? {{ module_info.name }}ModuleInput
 
-    return viewController as! {{ module_info.name }}ModuleInput
+    return viewController
   }
 
 }

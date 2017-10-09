@@ -25,14 +25,12 @@ class {{ module_info.name }}ModuleConfiguratorTests: XCTestCase {
     // given
 
     // when
-    let viewController = {{ module_info.name }}ModuleBuilder.setupModule() as! {{ module_info.name }}ViewController
     let module = {{ module_info.name }}ModuleBuilder.setupModule(handler: nil)
-    let viewController = module.viewController
+    let viewController = module.viewController as! {{ module_info.name }}ViewController
     let input = module.input
 
     //then
     XCTAssertNotNil(viewController, "got nil viewController")
-    XCAssertTrue(input is {{ module_info.name }}ModuleInput, "input must be a {{ module_info.name }}ModuleInput")
 
     XCTAssertNotNil(viewController.output, "{{ module_info.name }}ViewController is nil after builder")
     XCTAssertTrue(viewController.output is {{ module_info.name }}Presenter, "output is not {{ module_info.name }}Presenter")
