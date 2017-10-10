@@ -9,33 +9,34 @@
 import UIKit
 
 public class {{ module_info.name }}ModuleBuilder {
-  public static func setupModule() -> UIViewController{
-    let viewController = self.setupModule(handler: nil).viewController
-    return viewController
-  }
+    public static func setupModule() -> UIViewController{
+        let viewController = self.setupModule(handler: nil).viewController
+        return viewController
+    }
 
-  public static func setupModule(handler: {{ module_info.name }}ModuleOutput?) -> (viewController: UIViewController, input: {{ module_info.name }}ModuleInput){
-    let viewController = {{ module_info.name }}ViewController()
-    let input = configure(viewController: viewController, handler: handler)
-    return (viewController, input)
-  }
+    public static func setupModule(handler: {{ module_info.name }}ModuleOutput?) -> (viewController: UIViewController, input: {{ module_info.name }}ModuleInput){
+        let viewController = {{ module_info.name }}ViewController()
+        let input = configure(viewController: viewController, handler: handler)
+        return (viewController, input)
+    }
 
-  private static func configure(viewController: {{ module_info.name }}ViewController, handler: {{ module_info.name }}ModuleOutput?) -> {{ module_info.name }}ModuleInput {
-    let router = {{ module_info.name }}Router()
-    router.transitionHandler = viewController
+    private static func configure(viewController: {{ module_info.name }}ViewController, handler: {{ module_info.name }}ModuleOutput?) -> {{ module_info.name }}ModuleInput {
+        let router = {{ module_info.name }}Router()
+        router.transitionHandler = viewController
 
-    let presenter = {{ module_info.name }}Presenter()
-    presenter.view = viewController
-    presenter.router = router
-    presenter.outer = handler
+        let presenter = {{ module_info.name }}Presenter()
+        presenter.view = viewController
+        presenter.router = router
+        presenter.outer = handler
+        router.presenter = presenter
 
-    let interactor = {{ module_info.name }}Interactor()
-    interactor.output = presenter
+        let interactor = {{ module_info.name }}Interactor()
+        interactor.output = presenter
 
-    presenter.interactor = interactor
-    viewController.output = presenter
+        presenter.interactor = interactor
+        viewController.output = presenter
 
-    return viewController
-  }
+        return viewController
+    }
 
 }

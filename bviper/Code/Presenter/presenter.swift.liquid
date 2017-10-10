@@ -11,14 +11,20 @@ typealias {{ module_info.name }}PresenterInteractor = {{ module_info.name }}Inte
 
 class {{ module_info.name }}Presenter
 {
-  weak var view: {{ module_info.name }}ViewInput!
-  var interactor: {{ module_info.name }}InteractorInput!
-  var router: {{ module_info.name }}RouterInput!
-  var outer: {{ module_info.name }}ModuleOutput?
+    weak var view: {{ module_info.name }}ViewInput!
+    var interactor: {{ module_info.name }}InteractorInput!
+    var router: {{ module_info.name }}RouterInput!
+    var outer: {{ module_info.name }}ModuleOutput?
 }
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterView{
+    func subscribe() {
+        interactor.startObserve()
+    }
 
+    func unsubscribe() {
+        interactor.stopObserve()
+    }
 }
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterInteractor {

@@ -8,7 +8,8 @@
 import UIKit
 
 class {{ module_info.name }}Router{
-  weak var transitionHandler : UIViewController!
+    weak var transitionHandler : UIViewController!
+    weak var presenter: {{ module_info.name }}Presenter!
 }
 
 extension {{ module_info.name }}Router: {{ module_info.name }}RouterInput {

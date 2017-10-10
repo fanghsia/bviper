@@ -17,12 +17,16 @@ protocol {{ module_info.name }}ViewInput: class {
 *  methods for communication VIEW -> PRESENTER
 */
 protocol {{ module_info.name }}ViewOutput {
+    func subscribe()
+    func unsubscribe()
 }
 
 /**
 *  methods for communication PRESENTER -> INTERACTOR
 */
 protocol {{ module_info.name }}InteractorInput {
+    func startObserve()
+    func stopObserve()
 }
 
 /**

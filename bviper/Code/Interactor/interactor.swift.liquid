@@ -7,9 +7,13 @@
 //
 
 class {{ module_info.name }}Interactor{
-  weak var output: {{ module_info.name }}InteractorOutput!
+    weak var output: {{ module_info.name }}InteractorOutput!
 }
 
 extension {{ module_info.name }}Interactor: {{ module_info.name }}InteractorInput {
+    func startObserve() {
+    }
 
+    func stopObserve() {
+    }
 }
