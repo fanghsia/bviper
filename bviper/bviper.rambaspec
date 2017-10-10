@@ -21,8 +21,8 @@ code_files:
 # Interactor layer
 - {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
 
-# DataManager helper
-- {name: Entry/Entry.swift, path: Code/Entry/entry.swift.liquid}
+# Entity 
+- {name: Entity/Entity.swift, path: Code/Entity/entity.swift.liquid}
 
 # Router layer
 - {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
