@@ -2,7 +2,7 @@
 name: "CVIPER"
 summary: "Swift VIPER module template with Configurator"
 author: "Fang Xia"
-version: "0.1.3"
+version: "0.4.0"
 license: "MIT"
 
 # The declarations for code files

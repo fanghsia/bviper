@@ -9,15 +9,9 @@
 import UIKit
 
 public class {{ module_info.name }}ModuleBuilder {
-    public static func setupModule() -> UIViewController{
-        let viewController = self.setupModule(handler: nil).viewController
-        return viewController
-    }
-
-    public static func setupModule(handler: {{ module_info.name }}ModuleOutput?) -> (viewController: UIViewController, input: {{ module_info.name }}ModuleInput){
+    public static func setupModule(handler: {{ module_info.name }}ModuleOutput? = nil) -> UIViewController&{{ module_info.name }}ModuleInput{
         let viewController = {{ module_info.name }}ViewController()
-        let input = configure(viewController: viewController, handler: handler)
-        return (viewController, input)
+        return configure(viewController: viewController, handler: handler)
     }
 
     private static func configure(viewController: {{ module_info.name }}ViewController, handler: {{ module_info.name }}ModuleOutput?) -> {{ module_info.name }}ModuleInput {
