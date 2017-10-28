@@ -11,7 +11,8 @@ import UIKit
 public class {{ module_info.name }}ModuleBuilder {
     public static func setupModule(handler: {{ module_info.name }}ModuleOutput? = nil) -> UIViewController&{{ module_info.name }}ModuleInput{
         let viewController = {{ module_info.name }}ViewController()
-        return configure(viewController: viewController, handler: handler)
+        _ = configure(viewController: viewController, handler: handler)
+        return viewController
     }
 
     private static func configure(viewController: {{ module_info.name }}ViewController, handler: {{ module_info.name }}ModuleOutput?) -> {{ module_info.name }}ModuleInput {
