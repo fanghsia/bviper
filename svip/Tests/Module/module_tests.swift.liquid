@@ -1,0 +1,36 @@
+//
+//  {{ prefix }}{{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import XCTest
+@testable import {{ module_info.project_name }}
+
+class {{ module_info.name }}ModuleTests: XCTestCase {
+    var module: {{ module_info.name }}ModuleInput?
+
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let view = {{ module_info.name }}ViewController()
+        view.configurate()
+        module = view as {{ module_info.name }}ModuleInput
+    }
+
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        module = nil
+        super.tearDown()
+    }
+
+    // ---------- {{ module_info.name }}ModuleInput ----------
+
+
+    // ----------- Stub {{ module_info.name }}ModuleOutput -------------
+    class StubModuleOutput: VipModuleOutput {
+    }
+}

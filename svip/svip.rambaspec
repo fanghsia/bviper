@@ -1,0 +1,45 @@
+# Template information section
+name: "SVIP"
+summary: "Swift VIP(uni-direction data flow) module template with Configurator"
+author: "Fang Xia"
+version: "0.1.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# Protocols
+- {name: Protocols/Module.swift, path: Code/Protocols/module.swift.liquid}
+- {name: Protocols/Protocols.swift, path: Code/Protocols/protocols.swift.liquid}
+
+# View layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# Entity 
+- {name: Entity/Entity.swift, path: Code/Entity/entity.swift.liquid}
+
+# Router layer
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+
+# The declarations for test files
+test_files:
+# Module tests
+- {name: Module/module_tests.swift, path: Tests/Module/module_tests.swift.liquid}
+
+# View tests
+- {name: View/ViewTests.swift, path: Tests/View/view_tests.swift.liquid}
+
+# Interactor tests
+- {name: Interactor/InteractorTests.swift, path: Tests/Interactor/interactor_tests.swift.liquid}
+
+# Presenter tests
+- {name: Presenter/PresenterTests.swift, path: Tests/Presenter/presenter_tests.swift.liquid}
+
+# Router tests
+- {name: Router/RouterTests.swift, path: Tests/Router/router_tests.swift.liquid}

@@ -1,0 +1,22 @@
+//
+//  {{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+class {{ module_info.name }}Presenter{
+    weak var view: {{ module_info.name }}ViewInput!
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterInput{
+    func didUpdated(state: {{ module_info.name }}Entity, oldState: {{ module_info.name }}Entity? = nil) {
+
+    }
+
+    func didUpdated(state: [{{ module_info.name }}Entity], changes: String) {
+
+    }
+}

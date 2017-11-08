@@ -1,0 +1,60 @@
+//
+//  {{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}ViewController: UIViewController{
+    var interactor: {{ module_info.name }}InteractorInput!
+    var router: {{ module_info.name }}RouterInput!
+    //-------- your code below ----------
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // setup relationship 
+        configurate()
+    }
+    // MARK: Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // DEFAULT: subscribe while shown
+        interactor.subscribe()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // DEFAULT: unsubscribe while disappear
+        interactor.unsubscribe()
+    }
+}
+
+extension {{ module_info.name }}ViewController{
+    final func configurate(){
+        let router = {{ module_info.name }}Router()
+        router.transitionHandler = self
+        self.router = router
+
+        let interactor = {{ module_info.name }}Interactor()
+        let presenter = {{ module_info.name }}Presenter()
+        interactor.presenter = presenter
+        presenter.view = self
+        self.interactor = interactor
+    }
+}
+
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewInput {
+
+}
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ModuleInput {
+}
+

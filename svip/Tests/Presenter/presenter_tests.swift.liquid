@@ -1,0 +1,47 @@
+//
+//  {{ prefix }}{{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import XCTest
+@testable import {{ module_info.project_name }}
+
+class {{ module_info.name }}PresenterTest: XCTestCase {
+    var presenter: {{ module_info.name }}Presenter?
+
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        presenter = {{ module_info.name }}Presenter()
+    } 
+
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        presenter = nil
+        super.tearDown()
+    }
+
+    // ---------- {{ module_info.name }}PresenterInput ----------
+    func testDidUpdateState(){
+        let state  = {{ module_info.name }}Entity(label: "")
+        let stub = StubViewController()
+        presenter?.view = stub
+
+        presenter?.didUpdated(state: state, oldState: nil)
+
+        // XCTAssert(stub.displayState)
+    }
+
+    func testDidUpdateStateArray(){
+        // ...
+    }
+
+    // ----------- Stub {{ module_info.name }}ViewInput --------------
+    class StubViewController: {{ module_info.name }}ViewInput {
+      
+    }
+}

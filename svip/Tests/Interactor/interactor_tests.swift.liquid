@@ -1,0 +1,46 @@
+//
+//  {{ prefix }}{{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import XCTest
+@testable import {{ module_info.project_name }}
+
+class {{ module_info.name }}InteractorTests: XCTestCase {
+    var interactor: {{ module_info.name }}Interactor?
+
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        interactor = {{ module_info.name }}Interactor()
+    }
+
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        interactor = nil
+        super.tearDown()
+    }
+
+    // ---------- {{ module_info.name }}InteractorInput ----------
+
+
+    // ----------- Stub Presenter -------------
+    class StubPresenter: {{ module_info.name }}PresenterInput{
+        var didUpdateState = false
+        var didUpdateStateArray = false
+        var state: {{ module_info.name }}Entity?
+
+        func didUpdated(state: {{ module_info.name }}Entity, oldState: {{ module_info.name }}Entity?) {
+            didUpdateState = true
+            self.state = state
+        }
+
+        func didUpdated(state: [{{ module_info.name }}Entity], changes: String) {
+            didUpdateStateArray = true
+        }
+    }
+}

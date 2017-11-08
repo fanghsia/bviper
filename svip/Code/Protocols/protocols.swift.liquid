@@ -1,0 +1,39 @@
+//
+//  {{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+/**
+*  methods for communication Presenter -> View
+
+*/
+protocol {{ module_info.name }}ViewInput: class {
+}
+
+/**
+*  methods for communication View -> Interactor
+*/
+protocol {{ module_info.name }}InteractorInput {
+    // NOTE: basic function to enable/disable communication
+    func subscribe()
+    func unsubscribe()
+}
+
+/**
+*  methods for communication Interactor -> Presenter
+*/
+protocol {{ module_info.name }}PresenterInput {
+    // NOTE: basic function to accept state change
+    func didUpdated(state: {{ module_info.name }}Entity, oldState: {{ module_info.name }}Entity?)  // for single entiry
+    func didUpdated(state: [{{ module_info.name }}Entity], changes: String) // for collection of entity
+}
+
+/**
+*  methods for communication Presenter -> Router
+*/
+protocol {{ module_info.name }}RouterInput {
+}

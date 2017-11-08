@@ -1,0 +1,45 @@
+//
+//  {{ module_info.name }}
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import XCTest
+@testable import {{ module_info.project_name }}
+
+class {{ module_info.name }}ViewTests: XCTestCase {
+    var view: {{ module_info.name }}ViewController?
+
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        view = {{ module_info.name }}ViewController()
+        view?.configurate()
+    }
+
+    override func tearDown() {
+      // Put teardown code here. This method is called after the invocation of each test method in the class.
+        view = nil
+        super.tearDown()
+    }
+
+    // ---------- {{ module_info.name }}ViewInput ---------------
+
+
+    // ---------- Stubs --------------------
+    // ----------- Stub {{ module_info.name }}Interactor ------------
+    class StubInteractor: {{ module_info.name }}InteractorInput {
+        func subscribe() {
+        }
+
+        func unsubscribe() {
+        }
+    }
+
+    // ------------ Stub {{ module_info.name }}RouterInput ----------
+    class StubRouter: {{ module_info.name }}RouterInput{
+    }
+}
